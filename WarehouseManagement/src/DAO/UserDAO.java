@@ -131,7 +131,4 @@ public class UserDAO implements DAOinterface<User>{
         }
         return result;
     }
-
-    
-    
 }
