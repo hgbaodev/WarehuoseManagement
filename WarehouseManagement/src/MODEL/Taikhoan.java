@@ -8,7 +8,7 @@ package MODEL;
  *
  * @author robot
  */
-public class User {
+public class Taikhoan {
     private String email;
     private String hoten;
     private String matkhau;
@@ -16,11 +16,11 @@ public class User {
     private String makhohang;
     private String manhomquyen;
     
-    public User(){
+    public Taikhoan(){
         
     }
 
-    public User(String email, String hoten, String matkhau, int trangthai, String makhohang, String manhomquyen) {
+    public Taikhoan(String email, String hoten, String matkhau, int trangthai, String makhohang, String manhomquyen) {
         this.email = email;
         this.hoten = hoten;
         this.matkhau = matkhau;

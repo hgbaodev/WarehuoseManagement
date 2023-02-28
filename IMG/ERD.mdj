@@ -6462,8 +6462,9 @@
 									"_parent": {
 										"$ref": "AAAAAAGGhHzp2AUAdWw="
 									},
-									"name": "makhh",
+									"name": "makh",
 									"type": "INTEGER",
+									"length": 0,
 									"primaryKey": true
 								},
 								{
@@ -6492,9 +6493,9 @@
 									"_parent": {
 										"$ref": "AAAAAAGGhHzp2AUAdWw="
 									},
-									"name": "manv",
-									"type": "INTEGER",
-									"foreignKey": true
+									"name": "sdt",
+									"type": "VARCHAR",
+									"length": 0
 								}
 							]
 						},

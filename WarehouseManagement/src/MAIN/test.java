@@ -1,7 +1,7 @@
 package MAIN;
 
-import DAO.UserDAO;
-import MODEL.User;
+import DAO.TaikhoanDAO;
+import MODEL.Taikhoan;
 
 /**
  *
@@ -9,7 +9,7 @@ import MODEL.User;
  */
 public class test {
     public static void main(String[] args) {
-        User user = new User("bao@gamil.com", "Hoang Gia Bao", "123", 1, "khohang1", "nhomquyen2");
-        UserDAO.getInstance().insert(user);
+        Taikhoan user = new Taikhoan("bao@gamil.com", "Hoang Gia Bao", "123", 1, "khohang1", "nhomquyen2");
+        TaikhoanDAO.getInstance().insert(user);
     }
 }

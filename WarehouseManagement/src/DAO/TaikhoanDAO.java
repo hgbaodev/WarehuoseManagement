@@ -5,7 +5,7 @@
 package DAO;
 
 import CONFIG.JDBCUtil;
-import MODEL.User;
+import MODEL.Taikhoan;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.ResultSet;
@@ -18,18 +18,18 @@ import java.util.logging.Logger;
  *
  * @author robot
  */
-public class UserDAO implements DAOinterface<User>{
+public class TaikhoanDAO implements DAOinterface<Taikhoan>{
     
-    public static UserDAO getInstance(){
-        return new UserDAO();
+    public static TaikhoanDAO getInstance(){
+        return new TaikhoanDAO();
     }
 
     @Override
-    public int insert(User t) {
+    public int insert(Taikhoan t) {
         int result = 0 ;
         try {
             Connection con = (Connection) JDBCUtil.getConnection();
-            String sql = "INSERT INTO `user`(`email`, `hoten`, `matkhau`, `trangthai`, `makhohang`, `manhomquyen`) VALUES (?,?,?,?,?,?)";
+            String sql = "INSERT INTO `taikhoan`(`email`, `hoten`, `matkhau`, `trangthai`, `makhohang`, `manhomquyen`) VALUES (?,?,?,?,?,?)";
             PreparedStatement pst = (PreparedStatement) con.prepareStatement(sql);
             pst.setString(1, t.getEmail());
             pst.setString(2, t.getHoten());
@@ -40,17 +40,17 @@ public class UserDAO implements DAOinterface<User>{
             result = pst.executeUpdate();
             JDBCUtil.closeConnection(con);
         } catch (SQLException ex) {
-            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TaikhoanDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result;
     }
 
     @Override
-    public int update(User t) {
+    public int update(Taikhoan t) {
           int result = 0 ;
         try {
             Connection con = (Connection) JDBCUtil.getConnection();
-            String sql = "UPDATE `user` SET `email`='?',`hoten`='?',`matkhau`='?',`trangthai`='?',`makhohang`='?',`manhomquyen`='?' WHERE ?";
+            String sql = "UPDATE `taikhoan` SET `email`='?',`hoten`='?',`matkhau`='?',`trangthai`='?',`makhohang`='?',`manhomquyen`='?' WHERE ?";
             PreparedStatement pst = (PreparedStatement) con.prepareStatement(sql);
             pst.setString(1, t.getHoten());
             pst.setString(2, t.getMatkhau());
@@ -61,7 +61,7 @@ public class UserDAO implements DAOinterface<User>{
             result = pst.executeUpdate();
             JDBCUtil.closeConnection(con);
         } catch (SQLException ex) {
-            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TaikhoanDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result;
     }
@@ -71,23 +71,23 @@ public class UserDAO implements DAOinterface<User>{
          int result = 0 ;
         try {
             Connection con = (Connection) JDBCUtil.getConnection();
-            String sql = "DELETE FROM user WHERE eamil = '?'";
+            String sql = "DELETE FROM taikhoan WHERE eamil = '?'";
             PreparedStatement pst = (PreparedStatement) con.prepareStatement(sql);
             pst.setString(1, t);
             result = pst.executeUpdate();
             JDBCUtil.closeConnection(con);
         } catch (SQLException ex) {
-            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TaikhoanDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result;
     }
 
     @Override
-    public ArrayList<User> selectAll() {
-        ArrayList<User> result = new ArrayList<User>();
+    public ArrayList<Taikhoan> selectAll() {
+        ArrayList<Taikhoan> result = new ArrayList<Taikhoan>();
         try {
             Connection con = (Connection) JDBCUtil.getConnection();
-            String sql = "SELECT * FROM user";
+            String sql = "SELECT * FROM taikhoan";
             PreparedStatement pst = (PreparedStatement) con.prepareStatement(sql);
             ResultSet rs = (ResultSet) pst.executeQuery();
             while(rs.next()){
@@ -98,7 +98,7 @@ public class UserDAO implements DAOinterface<User>{
                 String makhohang = rs.getString("makhohang");
                 String manhomquyen = rs.getString("manhomquyen");
                 
-                User us = new User(email, hoten, matkhau, trangthai, makhohang, manhomquyen);
+                Taikhoan us = new Taikhoan(email, hoten, matkhau, trangthai, makhohang, manhomquyen);
                 result.add(us);
             }
             JDBCUtil.closeConnection(con);
@@ -108,11 +108,11 @@ public class UserDAO implements DAOinterface<User>{
     }
 
     @Override
-    public User selectById(String t) {
-        User result = null;
+    public Taikhoan selectById(String t) {
+        Taikhoan result = null;
         try {
             Connection con = (Connection) JDBCUtil.getConnection();
-            String sql = "SELECT * FROM user WHERE email='?'";
+            String sql = "SELECT * FROM taikhoan WHERE email='?'";
             PreparedStatement pst = (PreparedStatement) con.prepareStatement(sql);
             pst.setString(1, t);
             ResultSet rs = (ResultSet) pst.executeQuery();
@@ -124,7 +124,7 @@ public class UserDAO implements DAOinterface<User>{
                 String makhohang = rs.getString("makhohang");
                 String manhomquyen = rs.getString("manhomquyen");
                 
-                result = new User(email, hoten, matkhau, trangthai, makhohang, manhomquyen);
+                result = new Taikhoan(email, hoten, matkhau, trangthai, makhohang, manhomquyen);
             }
             JDBCUtil.closeConnection(con);
         } catch (Exception e) {
