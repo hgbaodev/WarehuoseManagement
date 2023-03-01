@@ -1,11 +1,9 @@
 
 package VIEW.main;
 
-import VIEW.form.Setting_Form;
 import event.EventColorChange;
 import form.Home_Form;
 import VIEW.form.Setting_Form;
-import VIEW.menu.EventMenu;
 import properties.SystemProperties;
 import theme.SystemTheme;
 import theme.ThemeColor;

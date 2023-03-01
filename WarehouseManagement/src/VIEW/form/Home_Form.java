@@ -1,4 +1,4 @@
-package form;
+package VIEW.form;
 
 import component.Form;
 
