@@ -1,4 +1,8 @@
-package swing.win_button;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package VIEW;
 
 import java.awt.Cursor;
 import java.awt.Graphics;
@@ -7,8 +11,8 @@ import java.awt.RenderingHints;
 import javax.swing.JButton;
 import javax.swing.border.EmptyBorder;
 
-public class Button extends JButton {
 
+public class Button extends JButton{
     public Button() {
         setContentAreaFilled(false);
         setBorder(new EmptyBorder(6, 6, 6, 6));

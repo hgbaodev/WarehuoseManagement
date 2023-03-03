@@ -1,4 +1,4 @@
-package theme;
+package VIEW;
 
 import java.awt.AlphaComposite;
 import java.awt.Color;
