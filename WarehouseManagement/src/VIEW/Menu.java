@@ -27,8 +27,6 @@ import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
 import org.jdesktop.animation.timing.TimingTargetAdapter;
 import org.jdesktop.animation.timing.interpolation.PropertySetter;
-import sswing.MenuButton;
-import theme.SystemTheme;
 
 /**
  *
@@ -147,6 +145,7 @@ public class Menu extends JPanel{
         addMenu("Income", "9", 8);
         addMenu("Message", "10", 9);
         addMenu("Check", "2", 10);
+        
         //  add more menu here
         menu.repaint();
         menu.revalidate();

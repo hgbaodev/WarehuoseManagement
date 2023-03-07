@@ -9,7 +9,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import sswing.PanelBackground;
 
 /**
  *
@@ -18,14 +17,15 @@ import sswing.PanelBackground;
 public class Main extends JFrame {
     private Header header;
     private Menu menu;
-    private PanelBackground pn = new PanelBackground();
     private JPanel jpanel;
+    private PanelBackground pn = new PanelBackground();
     
     public Main(){
         init();
         header.initMoving(this);
         header.initEvent(this, pn);
         this.setVisible(true);
+        
     }
 
     public void init() {
@@ -39,7 +39,7 @@ public class Main extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jpanel.setLayout(new BorderLayout());
         header.setPreferredSize(new Dimension(0, 50));
-        menu.setPreferredSize(new Dimension(200,1000));
+        menu.setPreferredSize(new Dimension(240,0));
         jpanel.add(header, BorderLayout.NORTH);
         jpanel.add(menu,BorderLayout.WEST);
         jpanel.setBackground(Color.WHITE);
