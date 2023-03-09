@@ -150,7 +150,7 @@ public class Menu extends JPanel{
         menu.repaint();
         menu.revalidate();
         setSelectedMenu(0);
-        animator = new Animator(300);
+        animator = new Animator(250);
         animator.addTarget(new TimingTargetAdapter() {
             @Override
             public void begin() {

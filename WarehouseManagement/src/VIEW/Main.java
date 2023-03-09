@@ -7,6 +7,8 @@ package VIEW;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -14,7 +16,7 @@ import javax.swing.JPanel;
  *
  * @author robot
  */
-public class Main extends JFrame {
+public class Main extends JFrame implements MouseListener{
     private Header header;
     private Menu menu;
     private JPanel jpanel;
@@ -65,5 +67,30 @@ public class Main extends JFrame {
             java.util.logging.Logger.getLogger(main.Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         new Main();
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        
     }
 }
